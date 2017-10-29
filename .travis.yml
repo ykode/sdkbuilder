@@ -23,8 +23,8 @@ env:
 
 before_script:
   - docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
-  - wget https://s3-ap-southeast-1.amazonaws.com/toolchain.ykode.id/arm-yk-linux-gnueabihf.linux-host.tar.gz
-  - wget https://buildroot.org/downloads/buildroot-2017.08.1.tar.gz
+  - wget --quiet https://s3-ap-southeast-1.amazonaws.com/toolchain.ykode.id/arm-yk-linux-gnueabihf.linux-host.tar.gz
+  - wget --quiet https://buildroot.org/downloads/buildroot-2017.08.1.tar.gz
 
 script:
   - docker build -t ykode/sdkbuilder -f docker/sdkbuild/Dockerfile .
