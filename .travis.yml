@@ -4,6 +4,18 @@ language: generic
 
 dist: trusty
 
+addons:
+  apt:
+    sources:
+      - sourceline: deb https://download.docker.com/linux/ubuntu trusty stable
+        key_url: https://download.docker.com/linux/ubuntu/gpg 
+    packages:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - software-properties-common
+      - docker-ce
+
 env:
   global:
   - secure: Z1Y6kXkCSo62EHWW2COsk6Sf0HbglpRLU4gwake+w8azeN3qwKMggZ2KmQFebqjzls5CR+Ss3dgQ+u1tHq5Xv9g2A1+fXQ0MwZw0xEclpx9b3FGDQOnUxcP7JiSHt/pTeekZVcN/GNV1K/tqR/XkjBVMuM2Ri8qPg+QdM7c/W5E/jTVEA5LUl/08MIxp8xZZDU9IXjRaxw/eohYNaKOgq7eqY1S5E/T9Nkyp5A77pHtuhEhyRu4+RtZ3N07qSPkr9yjpQjbUq2Yy3/VAXLJvqToS5QHhRR1zHZyDL9QkdaNW0leens24a655XCfoErhogbq3pObvlnLVT9cKlukGWcALYombuaoVKnFtu1U64200soSVoLqKqQU04QPw1qsKzIRP9Sf+cfGLO0n80oIgQKU2ad1QEpWIOk1ERfNY+eYl5aJHdFJQtEb2UN9OTw4W3j/ByQCabqJTo30fbmbmcyzAk5ezOJcNxCG5FnIrQKmWl8lX2sFV5nKkdps3TOqPz1apiqdEKtiQCcis0MAOm6XmTFWNRpd1xi9ZJ1w3GasrRIuviWilhoNkKe67f55ft5SwdlSXyFlK3n0nMGO12m1WALkJ5YkjusbgCxkyzTX09OxRE4pi54ad2vltwo6wPoPrtYKol4K04ede5jexAt5EGfHMK2uGboSOLzgQZ9M=
