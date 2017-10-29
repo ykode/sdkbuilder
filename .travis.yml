@@ -25,7 +25,7 @@ before_script:
   - docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
 script:
   - docker build -t ykode/sdkbuilder -f docker/sdkbuild/Dockerfile .
-  - docker build -t ykode/crosstool -f docker/crosstool-ng
+  - docker build -t ykode/crosstool -f docker/crosstool-ng/Dockerfile .
 
 after_success:
   - docker push ykode/sdkbuilder
