@@ -5,5 +5,5 @@ LABEL maintainer="Didiet Noor <dnoor@ykode.id>"
 ADD configurations/silvermont.ctconfig ct-build/.config 
 
 RUN cd ct-build \
-    && ../crosstool-ng/ct-build source \
+    && ../crosstool-ng/ct-ng source \
     && cd ..
