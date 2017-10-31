@@ -38,3 +38,4 @@ after_success:
   - docker push ykode/crosstool
   - docker push ykode/buildroot && git push ykode/buildroot:cortex-a8
   - docker push ykode/crosstool-targets:silvermont
+  - docker push ykode/crosstool-targets:beagle
