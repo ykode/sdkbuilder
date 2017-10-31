@@ -29,9 +29,11 @@ before_script:
 script:
   - docker build -t ykode/sdkbuilder -f docker/sdkbuild/Dockerfile .
   - docker build -t ykode/crosstool -f docker/crosstool-ng/Dockerfile .
-  - docker build -t ykode/buildroot -f docker/buildroot/Dockerfile .
+  - docker build -t ykode/crosstool-targets:silvermont -f docker/crosstool-targets/Dockerfile.silvermont .
+  - docker build -t ykode/buildroot -f docker/buildroot/Dockerfile . && docker tag ykode/buildroot:latest ykode/buildroot:cortex-a8
 
 after_success:
   - docker push ykode/sdkbuilder
   - docker push ykode/crosstool
-  - docker push ykode/buildroot
+  - docker push ykode/buildroot && git push ykode/buildroot:cortex-a8
+  - docker push ykode/crostool-targets:silvermont
