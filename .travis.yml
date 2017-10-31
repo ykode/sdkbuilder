@@ -30,7 +30,7 @@ script:
   - docker build -t ykode/sdkbuilder -f docker/sdkbuild/Dockerfile .
   - docker build -t ykode/crosstool -f docker/crosstool-ng/Dockerfile .
   - docker build -t ykode/crosstool-targets:silvermont -f docker/crosstool-targets/Dockerfile.silvermont .
-  - docker build -t ykode/crosstool-targets:beagle -f docer/crosstool-targets/Dockerfile.beagle .
+  - docker build -t ykode/crosstool-targets:beagle -f docker/crosstool-targets/Dockerfile.beagle .
   - docker build -t ykode/buildroot -f docker/buildroot/Dockerfile . && docker tag ykode/buildroot:latest ykode/buildroot:cortex-a8
 
 after_success:
